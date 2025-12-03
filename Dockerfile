@@ -1,16 +1,11 @@
-FROM node:24.11.0-alpine
-
-RUN apk add --no-cache git
-RUN corepack enable pnpm
+FROM oven/bun:1.3.3-alpine
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml /app/
-
-RUN pnpm i --frozen-lockfile
-
+COPY package.json bun.lock /app/
 COPY . .
 
-RUN pnpm build
+RUN bun i --frozen-lockfile
+RUN bun compile
 
-CMD [ "pnpm", "start" ]
+CMD ["bun", "start"]
