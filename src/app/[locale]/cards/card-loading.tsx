@@ -62,13 +62,14 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
 
             {open && (
                 <div
-                    className='fixed inset-0 z-40 bg-black/70 flex items-center justify-center'
+                    className='fixed inset-0 z-40 bg-black/70 flex items-center justify-center p-4'
                 >
                     <div
                         className='
                             flex flex-col items-center
                             rounded-2xl
                             bg-[#171717]
+                            max-h-full md:max-h-[90vh] overflow-y-auto
                         '
                     >
                         <div
@@ -89,7 +90,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                                 />
 
                                 <div
-                                    className='flex flex-col gap-2'
+                                    className='flex flex-col gap-2 pl-5 md:pl-0'
                                 >
                                     <p
                                         className='font-bold text-center text-2xl'
@@ -169,7 +170,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                                     className='flex gap-5'
                                 >
                                     <div
-                                        className='flex flex-col gap-2'
+                                        className='flex flex-col gap-2 pl-5 md:pl-0'
                                     >
                                         <span
                                             className='flex items-center gap-2'
@@ -282,11 +283,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                                 className='bg-red-500 rounded-xl px-10 py-1 cursor-pointer'
                                 onClick={() => setOpen(false)}
                             >
-                                <span
-                                    className=''
-                                >
-                                    {t('close')}
-                                </span>
+                                <span>{t('close')}</span>
                             </button>
                         </div>
                     </div>
