@@ -1,0 +1,297 @@
+'use client'
+
+import type { Player } from '@sabinelab/players'
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+import { useState } from 'react'
+
+type Props = {
+    src: string
+    collection: string
+    alt: string
+    player: Player
+}
+
+export default function CardLoading({ src, collection, alt, player }: Props) {
+    const [loaded, setLoaded] = useState(false)
+    const [open, setOpen] = useState(false)
+
+    const t = useTranslations()
+
+    return (
+        <>
+            <div
+                className='
+                    flex flex-col justify-between gap-5
+                    bg-[#2A2A2A] overflow-x-hidden p-5 text-xl
+                    rounded-3xl text-center transition hover:scale-110 duration-300 relative
+                '
+            >
+                <div
+                    className='font-bold'
+                >
+                    {!loaded && <div className='absolute inset-0 bg-gray-700 animate-pulse rounded-3xl' />}
+
+                    <Image
+                        src={src}
+                        height={250}
+                        width={250}
+                        alt={alt}
+                        className={`rounded-3xl text-center ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                        onLoad={() => setLoaded(true)}
+                    />
+
+                    <span>
+                        {collection}
+                    </span>
+                </div>
+
+                <button
+                    className='
+                        bg-indigo-500 rounded-xl cursor-pointer
+                    '
+                    onClick={() => setOpen(true)}
+                >
+                    <span
+                        className='flex p-1 justify-center'
+                    >
+                        {t('cards.more_information')}
+                    </span>
+                </button>
+            </div>
+
+            {open && (
+                <div
+                    className='fixed inset-0 z-40 bg-black/70 flex items-center justify-center'
+                >
+                    <div
+                        className='
+                            flex flex-col items-center
+                            rounded-2xl
+                            bg-[#171717]
+                        '
+                    >
+                        <div
+                            className='flex flex-col md:flex-row gap-10 md:gap-40 py-10 px-10 md:px-20'
+                        >
+                            <div
+                                className='flex flex-col justify-center items-center'
+                            >
+                                {!loaded && <div className='absolute inset-0 bg-gray-700 animate-pulse rounded-3xl' />}
+
+                                <Image
+                                    src={src}
+                                    height={250}
+                                    width={250}
+                                    alt={alt}
+                                    className={`rounded-3xl text-center ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                                    onLoad={() => setLoaded(true)}
+                                />
+
+                                <div
+                                    className='flex flex-col gap-2'
+                                >
+                                    <p
+                                        className='font-bold text-center text-2xl'
+                                    >
+                                        {player.name}
+                                    </p>
+
+                                    <span
+                                        className='flex items-center gap-2'
+                                    >
+                                        <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                        {t.rich('cards.collection', {
+                                            collection: player.collection,
+                                            strong: (chunks) => (
+                                                <span
+                                                    className='font-bold text-gray-400'
+                                                >
+                                                    {chunks}
+                                                </span>
+                                            )
+                                        })}
+                                    </span>
+
+                                    <span
+                                        className='flex items-center gap-2'
+                                    >
+                                        <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                        {t.rich(`cards.role.${player.role}`, {
+                                            strong: (chunks) => (
+                                                <span
+                                                    className='font-bold text-gray-400'
+                                                >
+                                                    {chunks}
+                                                </span>
+                                            )
+                                        })}
+                                    </span>
+
+                                    <span
+                                        className='flex items-center gap-2'
+                                    >
+                                        <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                        {
+                                            player.purchaseable
+                                                ? t('cards.purchasable.true')
+                                                : t('cards.purchasable.false')
+                                        }
+                                    </span>
+
+                                    <span
+                                        className='flex items-center gap-2'
+                                    >
+                                        <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                        {t.rich('cards.price', {
+                                            price: player.price.toLocaleString(),
+                                            strong: (chunks) => (
+                                                <span
+                                                    className='font-bold text-gray-400'
+                                                >
+                                                    {chunks}
+                                                </span>
+                                            )
+                                        })}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div
+                                className='flex flex-col gap-5 justify-center'
+                            >
+                                <h3
+                                    className='font-bold text-2xl text-center'
+                                >
+                                    {t('cards.stats.title')}
+                                </h3>
+                                <div
+                                    className='flex gap-5'
+                                >
+                                    <div
+                                        className='flex flex-col gap-2'
+                                    >
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.aim', {
+                                                stats: player.aim,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.hs', {
+                                                stats: player.HS,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.movement', {
+                                                stats: player.movement,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+                                    </div>
+
+                                    <div
+                                        className='flex flex-col gap-2'
+                                    >
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.aggression', {
+                                                stats: player.aggression,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.acs', {
+                                                stats: player.ACS,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+
+                                        <span
+                                            className='flex items-center gap-2'
+                                        >
+                                            <span className='w-1.5 h-1.5 rounded-full bg-current' />
+                                            {t.rich('cards.stats.gamesense', {
+                                                stats: player.gamesense,
+                                                strong: (chunks) => (
+                                                    <span
+                                                        className='font-bold text-gray-400'
+                                                    >
+                                                        {chunks}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            className='p-5'
+                        >
+                            <button
+                                className='bg-red-500 rounded-xl px-10 py-1 cursor-pointer'
+                                onClick={() => setOpen(false)}
+                            >
+                                <span
+                                    className=''
+                                >
+                                    {t('close')}
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
+    )
+}

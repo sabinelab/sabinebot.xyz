@@ -7,5 +7,4 @@ services:
     container_name: sabine-website
     restart: always
     ports:
-      - "${PORT}:${PORT}"
-    network_mode: host
+      - '7000:3000'

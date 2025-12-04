@@ -1,56 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1A1A1A;
-  --foreground: #E0E0E0;
+    --background: #1A1A1A;
+    --foreground: #E0E0E0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 .markdown h1 {
-  @apply text-4xl font-bold mb-4;
+    @apply text-4xl font-bold mb-4;
 }
 
 .markdown h2 {
-  @apply text-3xl font-bold mb-3;
+    @apply text-3xl font-bold mb-3;
 }
 
 .markdown p {
-  @apply mb-2 leading-relaxed;
+    @apply mb-2 leading-relaxed;
 }
 
 .markdown ul {
-  @apply list-disc pl-5 mb-2;
+    @apply list-disc pl-5 mb-2;
 }
 
 .markdown li {
-  @apply mb-1;
+    @apply mb-1;
 }
 
 .markdown a {
-  @apply text-blue-400 underline font-bold;
+    @apply text-blue-400 underline font-bold;
 }
 
 .markdown strong {
-  @apply font-bold;
+    @apply font-bold;
 }
 
 .markdown em {
-  @apply italic;
+    @apply italic;
 }
 
 .markdown code {
-  @apply bg-[#3A3A3A] p-0.5 rounded font-mono;
+    @apply bg-[#3A3A3A] p-0.5 rounded font-mono;
 }
 
 .markdown img {
-  @apply w-170 h-auto rounded-xl my-10;
+    @apply w-170 h-auto rounded-xl my-10;
 }
