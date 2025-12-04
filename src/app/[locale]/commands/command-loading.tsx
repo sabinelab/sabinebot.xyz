@@ -4,8 +4,8 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 export type Command = {
-  name: string
-  description: string
+    name: string
+    description: string
 }
 
 export default function CommandLoading() {

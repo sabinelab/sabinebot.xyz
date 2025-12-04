@@ -25,10 +25,10 @@ export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
 }
 
 type Props = {
-  children?: React.ReactNode,
-  params: Promise<{
-    locale: string
-  }>
+    children?: React.ReactNode,
+    params: Promise<{
+        locale: string
+    }>
 }
 
 const inter = Inter({
@@ -49,12 +49,12 @@ export default async function RootLayout({
                     messages={messages}
                     locale={locale}
                 >
-                    <main className="flex-grow">
+                    <main className='grow'>
                         <Script
                             async
-                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3346744916189692"
-                            crossOrigin="anonymous"
-                            strategy="afterInteractive"
+                            src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3346744916189692'
+                            crossOrigin='anonymous'
+                            strategy='afterInteractive'
                         />
                         {children}
                     </main>

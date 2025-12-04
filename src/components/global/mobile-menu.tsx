@@ -7,10 +7,10 @@ import MobileLanguageMenu from './mobile-language-menu'
 import { FaDiscord } from 'react-icons/fa'
 
 type Props = {
-  commands: string
-  changelog: string
-  cards: string
-  url: string
+    commands: string
+    changelog: string
+    cards: string
+    url: string
 }
 
 export default function MobileMenu({ cards, commands, changelog, url }: Props) {
