@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
                 hostname: 'cdn2.sabinebot.xyz'
             }
         ]
-    }
+    },
+    allowedDevOrigins: ['test.sabinebot.xyz']
 }
 
 const withNextIntl = createNextIntlPlugin()
