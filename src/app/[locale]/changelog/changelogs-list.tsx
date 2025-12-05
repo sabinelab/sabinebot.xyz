@@ -1,0 +1,56 @@
+import Link from 'next/link'
+
+type Content = {
+  lang: string
+  text: string
+}
+export type Changelog = {
+  id: string
+  published_at: string
+  content: Content[]
+}
+type Props = {
+  locale: string
+}
+
+const getChangelogs = async() => {
+  const res = await fetch(process.env.API_URL + '/updates', {
+    headers: {
+      authorization: process.env.AUTH
+    }
+  })
+  const changelogs: Changelog[] = await res.json()
+
+  return changelogs
+    .sort((a, b) =>
+      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+    )
+}
+
+export default async function ChangelogsList({ locale }: Props) {
+  const changelogs = await getChangelogs()
+
+  return (
+    <>
+      <div
+        className='flex flex-col items-center justify-center pt-10'
+      >
+        {
+          changelogs.map((update, i) => (
+            <Link
+              key={i}
+              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105'
+              href={`/${locale}/changelog/v${update.id}`}
+            >
+              <h2
+                className='text-2xl font-bold'
+              >
+                v{update.id}
+              </h2>
+            </Link>
+          ))
+        }
+      </div>
+    </>
+  )
+}

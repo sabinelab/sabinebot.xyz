@@ -1,32 +1,26 @@
 import { getTranslations } from 'next-intl/server'
 import { Search } from 'lucide-react'
-import { calcPlayerOvr, getPlayer, getPlayers } from '@sabinelab/players'
 import { redirect } from 'next/navigation'
-import CardLoading from './card-loading'
+import { Suspense } from 'react'
+import Cards from './cards'
+import CardsSkeleton from './cards-skeleton'
 
 type Props = {
-    searchParams?: Promise<Record<string, string>>
+  searchParams?: Promise<Record<string, string>>
 }
-
-const players = getPlayers()
 
 const searchAction = async(formData: FormData) => {
   'use server'
 
   const q = formData.get('q')?.toString()
+
   redirect(!q ? '/cards' : `/cards/?q=${encodeURIComponent(q)}`)
 }
 
-const ts = Date.now()
-
-export default async function Cards({ searchParams }: Props) {
+export default async function CardsPage({ searchParams }: Props) {
   const t = await getTranslations()
 
   const q = (await searchParams)?.q?.toLowerCase() ?? ''
-
-  const filtered = players.sort((a, b) => calcPlayerOvr(b) - calcPlayerOvr(a))
-        .map(p => ({ name: `${p.name} — ${p.collection}`, id: p.id, collection: p.collection }))
-        .filter(p => p.name.toLowerCase().includes(q))
 
   return (
     <>
@@ -57,25 +51,10 @@ export default async function Cards({ searchParams }: Props) {
           </button>
         </form>
       </div>
-      <div
-        className='grid justify-items-center gap-7 mt-10 md:px-30 mb-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
-      >
-        {filtered.map(p => {
-          const player = getPlayer(p.id)
 
-          if(!player) return null
-
-          return (
-            <CardLoading
-              key={p.id}
-              src={`${process.env.CDN_URL}/cards/${p.id}.png?ts=${ts}`}
-              alt={p.name}
-              collection={p.collection}
-              player={player}
-            />
-          )
-        })}
-      </div>
+      <Suspense fallback={<CardsSkeleton />}>
+        <Cards query={q} />
+      </Suspense>
     </>
   )
 }

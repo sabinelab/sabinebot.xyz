@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server'
-import CommandLoading from './command-loading'
+import { Suspense } from 'react'
+import CommandsList from './commands-list'
+import CommandsSkeleton from './commands-skeleton'
 
 export default async function Commands() {
   const t = await getTranslations()
@@ -11,7 +13,10 @@ export default async function Commands() {
           {t('commands.title')}
         </h1>
       </div>
-      <CommandLoading />
+      
+      <Suspense fallback={<CommandsSkeleton />} >
+        <CommandsList />
+      </Suspense>
     </>
   )
 }
