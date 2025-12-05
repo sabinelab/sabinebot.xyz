@@ -28,7 +28,7 @@ export default async function Changelog(props: Props) {
 
   return (
     <>
-      <div className='px-10 pt-15 max-w-none markdown mb-20'>
+      <div className='px-10 pt-15 max-w-none markdown'>
         <Markdown>
           {content.text.trim()}
         </Markdown>
