@@ -5,16 +5,18 @@ import br from '@/messages/br.json'
 import us from '@/messages/us.json'
 
 const locales = {
-    br,
-    us
+  br,
+  us
 } as const
 
 export default getRequestConfig(async({ requestLocale }) => {
-    const requested = await requestLocale
-    const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale
+  const requested = await requestLocale
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale
   
-    return {
-        messages: locales[locale],
-        locale
-    }
+  return {
+    messages: locales[locale],
+    locale
+  }
 })

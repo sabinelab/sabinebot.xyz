@@ -5,5 +5,5 @@ import type { ProxyConfig } from 'next/server'
 export default createMiddleware(routing)
 
 export const config: ProxyConfig = {
-    matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
+  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
 }
