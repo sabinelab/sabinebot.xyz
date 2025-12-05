@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPlayers } from '@sabinelab/players'
-import { ArrowDown } from 'lucide-react'
+import { ArrowDown, ExternalLink } from 'lucide-react'
 
 const players = getPlayers()
 
@@ -28,18 +28,14 @@ export default async function Home() {
                 <Link
                     href='/invite'
                     target='_blank'
-                    className='flex items-center md:text-3xl gap-2 bg-[#3442b8] rounded-2xl mt-5 px-6 py-2 transition duration-300 hover:scale-105'
+                    className='flex items-center text-xl md:text-3xl gap-2 bg-[#3442b8] rounded-2xl mt-5 px-6 py-2 transition duration-300 hover:scale-105'
                 >
                     <span>
                         {t('home.add')}
                     </span>
-                    <Image
-                        src='/redirect.png'
-                        width={35}
-                        height={50}
-                        alt='add'
-                        className='invert'
-                    />
+                    
+                    <ExternalLink className='hidden md:block' size={31} />
+                    <ExternalLink className='block md:hidden' />
                 </Link>
                 <ArrowDown
                     size={50}
