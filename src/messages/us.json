@@ -222,7 +222,7 @@
         "collection": "Collection: <strong>{collection}</strong>",
         "role": {
             "duelist": "Role: <strong>Duelist</strong>",
-            "initator": "Role: <strong>Initiator</strong>",
+            "initiator": "Role: <strong>Initiator</strong>",
             "controller": "Role: <strong>Controller</strong>",
             "flex": "Role: <strong>Flex</strong>",
             "sentinel": "Role: <strong>Sentinel</strong>"
