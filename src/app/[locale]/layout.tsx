@@ -1,10 +1,10 @@
-import Header from '@/components/global/header'
 import '../globals.css'
+import Header from '@/components/global/header'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
-import { Inter } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
-import Footer from '../../components/global/footer'
+import Footer from '@/components/global/footer'
 import Script from 'next/script'
 
 export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
@@ -32,7 +32,7 @@ type Props = {
   }>
 }
 
-const inter = Inter({
+const noto = Noto_Sans({
   subsets: ['latin']
 })
 
@@ -42,9 +42,10 @@ export default async function RootLayout({
 }: Props) {
   const messages = await getMessages()
   const { locale } = await params
+
   return (
     <html lang={locale}>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={`${noto.className} min-h-screen flex flex-col background`}>
         <Header />
         <NextIntlClientProvider
           messages={messages}
