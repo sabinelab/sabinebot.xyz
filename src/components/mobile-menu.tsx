@@ -24,13 +24,12 @@ export default function MobileMenu({ cards, commands, changelog, url }: Props) {
         </button>
 
         {isOpen && (
-          <div className='absolute top-15 right-1 bg-[#2A2A2A] rounded-sm shadow-md z-50'>
+          <div className='absolute top-15 right-1 bg-[#2A2A2A]/30 rounded-sm shadow-md z-50'>
             <ul className='flex flex-col gap-2 justify-center items-center p-2'>
               <li>
                 <Link
                   href='/commands'
                   className='inline-block py-1 px-4'
-                  target='_blank'
                 >
                   {commands}
                 </Link>

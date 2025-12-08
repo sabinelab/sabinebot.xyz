@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Transition } from '@headlessui/react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { locales } from '../../config'
 import { Languages } from 'lucide-react'
 
@@ -10,11 +10,10 @@ export default function LanguageMenu() {
   const [isOpen, setIsOpen] = useState(false)
 
   const router = useRouter()
-  const pathname = usePathname()
   
   const changeLanguage = (lang: typeof locales[number]) => {
-    const reg = new RegExp(`^/(${locales.join('|')})`)
-    router.push(`/${lang}${pathname.replace(reg, '')}`)
+    document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000; SameSite=Lax`
+    router.refresh()
   }
 
   return (

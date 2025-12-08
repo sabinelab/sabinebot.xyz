@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { locales } from '../../config'
 import { Languages } from 'lucide-react'
 
@@ -10,11 +9,10 @@ export default function MobileLanguageMenu() {
   const [isOpen, setIsOpen] = useState(false)
 
   const router = useRouter()
-  const pathname = usePathname()
 
   const changeLanguage = (lang: typeof locales[number]) => {
-    const reg = new RegExp(`^/(${locales.join('|')})`)
-    router.push(`/${lang}${pathname.replace(reg, '')}`)
+    document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000; SameSite=Lax`
+    router.refresh()
   }
 
   return (
@@ -35,24 +33,12 @@ export default function MobileLanguageMenu() {
                 className='flex items-center px-4 py-2 cursor-pointer gap-4 hover:bg-[#3A3A3A] rounded-md transition'
                 onClick={() => changeLanguage('br')}
               >
-                <Image
-                  src='/header/br.png'
-                  width={40}
-                  height={72}
-                  alt='br'
-                />
                 <span>Português</span>
               </li>
               <li
                 className='flex items-center px-4 py-2 cursor-pointer gap-4 hover:bg-[#3A3A3A] rounded-md transition'
                 onClick={() => changeLanguage('us')}
               >
-                <Image
-                  src='/header/us.png'
-                  width={40}
-                  height={72}
-                  alt='us'
-                />
                 <span>English</span>
               </li>
             </ul>

@@ -3,5 +3,6 @@ import { locales } from '../../config'
 
 export const routing = defineRouting({
   locales,
-  defaultLocale: 'us'
+  defaultLocale: 'us',
+  localePrefix: 'never'
 })

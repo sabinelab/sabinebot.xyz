@@ -9,9 +9,6 @@ export type Changelog = {
   published_at: string
   content: Content[]
 }
-type Props = {
-  locale: string
-}
 
 const getChangelogs = async() => {
   const res = await fetch(process.env.API_URL + '/updates', {
@@ -27,7 +24,7 @@ const getChangelogs = async() => {
     )
 }
 
-export default async function ChangelogsList({ locale }: Props) {
+export default async function ChangelogsList() {
   const changelogs = await getChangelogs()
 
   return (
@@ -40,7 +37,7 @@ export default async function ChangelogsList({ locale }: Props) {
             <Link
               key={i}
               className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105'
-              href={`/${locale}/changelog/v${update.id}`}
+              href={`/changelog/v${update.id}`}
             >
               <h2
                 className='text-2xl font-bold'
