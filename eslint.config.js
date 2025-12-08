@@ -56,7 +56,8 @@ export default defineConfig([
       'import/no-anonymous-default-export': 'off',
       'react-hooks/exhaustive-deps': 'off',
       'react/react-in-jsx-scope': 'off',
-      '@typescript-eslint/no-empty-object-type': 'off'
+      '@typescript-eslint/no-empty-object-type': 'off',
+      'react/no-children-prop': 'off'
     }
   }
 ])
