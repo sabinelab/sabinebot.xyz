@@ -1,16 +1,16 @@
 import '../globals.css'
-import Header from '@/components/global/header'
+import Header from '@/components/header'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { Noto_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
-import Footer from '@/components/global/footer'
+import Footer from '@/components/footer'
 import Script from 'next/script'
 
-export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const { locale } = await params
   const t = await getTranslations({ locale })
-  
+
   return {
     title: t('metadata.title'),
     description: t('metadata.desc'),
