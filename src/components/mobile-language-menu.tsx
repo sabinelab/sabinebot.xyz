@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-import { locales } from '../../../config'
+import { locales } from '../../config'
 import { Languages } from 'lucide-react'
 
 export default function MobileLanguageMenu() {
