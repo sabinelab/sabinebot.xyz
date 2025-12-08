@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPlayers } from '@sabinelab/players'
-import { ArrowDown, ExternalLink } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 
 const players = getPlayers()
 
@@ -20,7 +20,7 @@ export default async function Home() {
           className='rounded-full'
         />
         <h1 className='md:pt-6 text-6xl font-bold md:text-8xl max-w-full md:max-w-md'>
-                    Sabine
+          Sabine
         </h1>
         <h2 className='text-center md:pt-6 text-2xl md:text-4xl max-w-full'>
           {t('home.title')}
@@ -28,21 +28,21 @@ export default async function Home() {
         <Link
           href='/invite'
           target='_blank'
-          className='flex items-center text-xl md:text-3xl gap-2 bg-[#3442b8] rounded-2xl mt-5 px-6 py-2 transition duration-300 hover:scale-105'
+          className='
+            flex items-center text-xl md:text-3xl gap-2 border border-white rounded-lg mt-5 px-6 py-2 transition duration-300
+            hover:bg-white hover:text-gray-800
+          '
         >
           <span>
             {t('home.add')}
           </span>
-                    
-          <ExternalLink className='hidden md:block' size={31} />
-          <ExternalLink className='block md:hidden' />
         </Link>
         <ArrowDown
           size={50}
           className='animate-bounce md:mt-25'
         />
       </div>
-      <div className='flex px-6 md:px-20 pt-8 md:pt-15 pb-10'>
+      <div className='flex px-6 md:px-20 pt-8 md:pt-15'>
         <div className='flex flex-col gap-25 justify-between'>
           <div className='flex flex-col md:flex-row items-center gap-10'>
             <div className='text-center md:text-left md:flex-1'>

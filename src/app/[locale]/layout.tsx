@@ -6,8 +6,9 @@ import { Noto_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
 import Footer from '@/components/footer'
 import Script from 'next/script'
+import Motion from '@/components/motion'
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
   const { locale } = await params
   const t = await getTranslations({ locale })
 
@@ -58,7 +59,7 @@ export default async function RootLayout({
               crossOrigin='anonymous'
               strategy='afterInteractive'
             />
-            {children}
+            <Motion children={children} />
           </main>
         </NextIntlClientProvider>
         <Footer />

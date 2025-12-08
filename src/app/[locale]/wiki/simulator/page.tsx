@@ -14,7 +14,7 @@ export default async function Wiki() {
         className='flex items-center justify-center pt-10'
       >
         <div
-          className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-5xl mb-6 text-3xl'
+          className='bg-[#2A2A2A]/30 p-5 rounded-2xl max-w-xs md:max-w-5xl text-3xl'
         >
           <ul className='flex flex-col gap-10'>
             <li>
@@ -44,7 +44,7 @@ export default async function Wiki() {
                 }
               >
                 {t.rich('wiki.module.simulator.how_it_works.description', {
-                  strong: (chunks) => <span className='font-bold bg-[#1A1A1A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>
+                  strong: (chunks) => <span className='font-bold bg-[#2A2A2A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>
                 })}
               </p>
             </li>
@@ -64,7 +64,7 @@ export default async function Wiki() {
                 }
               >
                 {t.rich('wiki.module.simulator.players.description', {
-                  strong: (chunks) => <span className='font-bold bg-[#1A1A1A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>,
+                  strong: (chunks) => <span className='font-bold bg-[#2A2A2A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>,
                   a: (chunks) => (
                     <a
                       className='font-bold text-blue-400 underline'
@@ -93,7 +93,7 @@ export default async function Wiki() {
                 }
               >
                 {t.rich('wiki.module.simulator.matches.description', {
-                  strong: (chunks) => <span className='font-bold bg-[#1A1A1A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>,
+                  strong: (chunks) => <span className='font-bold bg-[#2A2A2A] text-[#9CA3AF] rounded-md md:max-w-30'>{chunks}</span>,
                 })}
               </p>
             </li>

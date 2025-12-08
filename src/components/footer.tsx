@@ -10,7 +10,7 @@ export default async function Footer() {
     <>
       <footer
         className='
-          bg-[#0F0F0F] md:px-30 h-110 md:h-50
+          bg-[#0F0F0F]/40 md:px-30 h-110 md:h-50
           flex flex-col md:flex-row justify-between
           px-4 p-1 md:items-center mt-30
         '
@@ -55,7 +55,6 @@ export default async function Footer() {
             </h3>
             <Link
               href={process.env.SUPPORT}
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               Discord
@@ -71,21 +70,18 @@ export default async function Footer() {
             </h3>
             <Link
               href='/wiki'
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               Wiki
             </Link>
             <Link
               href='/commands'
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               {t('footer.commands')}
             </Link>
             <Link
               href='/guidelines'
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               {t('footer.guidelines')}
@@ -101,14 +97,12 @@ export default async function Footer() {
             </h3>
             <Link
               href='/terms'
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               {t('footer.terms')}
             </Link>
             <Link
               href='/privacy'
-              target='_blank'
               className='text-base text-[#9CA3AF] underline'
             >
               {t('footer.privacy')}

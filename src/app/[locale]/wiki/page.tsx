@@ -21,7 +21,7 @@ export default async function Wiki() {
             className='hover:brightness-110'
           >
             <li
-              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105  md:text-3xl'
+              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105  md:text-3xl'
             >
               {t('wiki.module.predictions.title')}
             </li>
@@ -32,7 +32,7 @@ export default async function Wiki() {
             className='hover:brightness-110'
           >
             <li
-              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105 md:text-3xl'
+              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105 md:text-3xl'
             >
               {t('wiki.module.simulator.title')}
             </li>
@@ -43,7 +43,7 @@ export default async function Wiki() {
             className='hover:brightness-110'
           >
             <li
-              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105 md:text-3xl'
+              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105 md:text-3xl'
             >
               {t('wiki.module.cards.title')}
             </li>
@@ -54,7 +54,7 @@ export default async function Wiki() {
             className='hover:brightness-110'
           >
             <li
-              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105 md:text-3xl'
+              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl w-[700] transition duration-500 hover:scale-105 md:text-3xl'
             >
               {t('wiki.module.meta.title')}
             </li>

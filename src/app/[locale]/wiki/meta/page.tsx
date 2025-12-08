@@ -1,12 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 
-const valorant_maps: {
-  name: string
-  meta_agents: string[]
-  image: string,
-  current_map_pool?: boolean,
-  sides: ('A' | 'B' | 'C')[]
-}[] = [
+export const valorant_maps = [
   {
     name: 'Ascent',
     meta_agents: [
@@ -18,9 +12,9 @@ const valorant_maps: {
       'Vyse',
       'Yoru',
       'Waylay',
-      'Cypher'
+      'Cypher',
+      'Chamber'
     ],
-    current_map_pool: true,
     image: 'https://imgur.com/HUdWHux.png',
     sides: ['A', 'B']
   },
@@ -87,7 +81,8 @@ const valorant_maps: {
       'Yoru',
       'Iso',
       'Neon',
-      'Viper'
+      'Viper',
+      'Chamber'
     ],
     current_map_pool: true,
     image: 'https://imgur.com/oNm4lD3.png',
@@ -102,9 +97,10 @@ const valorant_maps: {
       'Killjoy',
       'Sova',
       'KAY/O',
-      'Gekko'
+      'Gekko',
+      'Reyna',
+      'Sage'
     ],
-    current_map_pool: true,
     image: 'https://imgur.com/aQrhYgx.png',
     sides: ['A', 'B']
   },
@@ -123,7 +119,8 @@ const valorant_maps: {
       'Sova'
     ],
     image: 'https://imgur.com/P1189zs.png',
-    sides: ['A', 'B']
+    sides: ['A', 'B'],
+    current_map_pool: true
   },
   {
     name: 'Split',
@@ -140,7 +137,8 @@ const valorant_maps: {
       'Cypher'
     ],
     image: 'https://imgur.com/36tar4S.png',
-    sides: ['A', 'B']
+    sides: ['A', 'B'],
+    current_map_pool: true
   },
   {
     name: 'Lotus',
@@ -157,7 +155,6 @@ const valorant_maps: {
       'Viper',
       'Omen'
     ],
-    current_map_pool: true,
     image: 'https://imgur.com/CLq6LKn.png',
     sides: ['A', 'B', 'C']
   },
@@ -189,8 +186,10 @@ const valorant_maps: {
       'Vyse',
       'Chamber',
       'Jett',
-      'Yoru'
+      'Yoru',
+      'Neon'
     ],
+    current_map_pool: true,
     image: 'https://imgur.com/7b8pgQz.png',
     sides: ['A', 'B']
   },
@@ -228,7 +227,7 @@ export default async function MetaAgents() {
         className='flex items-center justify-center pt-10'
       >
         <div
-          className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-5xl mb-6 text-3xl'
+          className='bg-[#2A2A2A]/30 p-5 rounded-2xl max-w-xs md:max-w-5xl mb-6 text-3xl'
         >
           <ul className='flex flex-col gap-10'>
             <li>

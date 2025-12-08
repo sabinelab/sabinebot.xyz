@@ -7,11 +7,12 @@ type Props = {
 
 const ts = Date.now()
 
+const players = getPlayers()
+  .sort((a, b) => b.ovr - a.ovr)
+  .map(p => ({ name: `${p.name} — ${p.collection}`, id: p.id, collection: p.collection }))
+
 export default function Cards(props: Props) {
-  const filtered = getPlayers()
-    .sort((a, b) => b.ovr - a.ovr)
-    .map(p => ({ name: `${p.name} — ${p.collection}`, id: p.id, collection: p.collection }))
-    .filter(p => p.name.toLowerCase().includes(props.query.toLowerCase()))
+  const filtered = players.filter(p => p.name.toLowerCase().includes(props.query.toLowerCase()))
 
   return (
     <div

@@ -1,15 +1,16 @@
 'use client'
 
+import CardSkeleton from '@/app/[locale]/cards/card-skeleton'
 import type { Player } from '@sabinelab/players'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useState } from 'react'
 
 type Props = {
-    src: string
-    collection: string
-    alt: string
-    player: Player
+  src: string
+  collection: string
+  alt: string
+  player: Player
 }
 
 export default function CardLoading({ src, collection, alt, player }: Props) {
@@ -23,14 +24,14 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
       <div
         className='
           flex flex-col justify-between gap-5
-          bg-[#2A2A2A] overflow-x-hidden p-5 text-xl
-          rounded-3xl text-center transition hover:scale-110 duration-300 relative
+          bg-[#2A2A2A]/30 overflow-x-hidden p-5 text-xl
+          rounded-lg text-center transition hover:scale-110 duration-300 relative
         '
       >
         <div
           className='font-bold'
         >
-          {!loaded && <div className='absolute inset-0 bg-gray-700 animate-pulse rounded-3xl' />}
+          {!loaded && <CardSkeleton />}
 
           <Image
             src={src}
@@ -48,7 +49,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
 
         <button
           className='
-            bg-indigo-500 rounded-xl cursor-pointer
+            bg-indigo-500 rounded-md cursor-pointer
           '
           onClick={() => setOpen(true)}
         >
@@ -67,8 +68,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
           <div
             className='
               flex flex-col items-center
-              rounded-2xl
-              bg-[#171717]
+              rounded-lg background
               max-h-full md:max-h-[90vh] overflow-y-auto
             '
           >
@@ -280,7 +280,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
               className='p-5'
             >
               <button
-                className='bg-red-500 rounded-xl px-10 py-1 cursor-pointer'
+                className='bg-red-500 rounded-md px-10 py-1 cursor-pointer'
                 onClick={() => setOpen(false)}
               >
                 <span>{t('close')}</span>

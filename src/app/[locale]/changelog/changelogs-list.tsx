@@ -39,7 +39,7 @@ export default async function ChangelogsList({ locale }: Props) {
           changelogs.map((update, i) => (
             <Link
               key={i}
-              className='bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105'
+              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105'
               href={`/${locale}/changelog/v${update.id}`}
             >
               <h2

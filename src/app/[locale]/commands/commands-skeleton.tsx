@@ -7,7 +7,7 @@ export default function CommandsSkeleton() {
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
-            className='bg-[#2A2A2A] p-10 rounded-2xl max-w-xs md:max-w-3xs mb-20 w-[700] h-72 animate-pulse'
+            className='bg-[#2A2A2A]/30 p-10 rounded-2xl max-w-xs md:max-w-3xs mb-20 w-[700] h-72 animate-pulse'
           />
         ))}
       </div>

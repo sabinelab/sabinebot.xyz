@@ -39,7 +39,7 @@ export default async function CardsPage({ searchParams }: Props) {
           <input
             type='text'
             placeholder={t('cards.search')}
-            className='w-full rounded-4xl border border-[#9CA3AF] pl-4 py-3'
+            className='w-full rounded-lg border border-[#9CA3AF] pl-4 py-3'
             name='q'
           />
           <button

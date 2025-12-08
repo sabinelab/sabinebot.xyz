@@ -31,7 +31,7 @@ export default async function CommandsList() {
           <div
             key={i}
             className='
-              bg-[#2A2A2A] p-5 rounded-2xl max-w-xs md:max-w-3xs
+              bg-[#2A2A2A]/30 p-5 rounded-2xl max-w-xs md:max-w-3xs
               mb-6 w-[700] transition duration-500 hover:scale-105
             '
           >

@@ -34,7 +34,7 @@ export default async function Header() {
             className='hidden text-lg md:flex'
           >
             <li
-              className='transition duration-300 hover:scale-105 hover:bg-[#333333] rounded-lg'
+              className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
               <Link
                 href='/commands'
@@ -48,7 +48,7 @@ export default async function Header() {
             </li>
 
             <li
-              className='transition duration-300 hover:scale-105 hover:bg-[#333333] rounded-lg'
+              className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
               <Link
                 href='/wiki'
@@ -62,7 +62,7 @@ export default async function Header() {
             </li>
 
             <li
-              className='transition duration-300 hover:scale-105 hover:bg-[#333333] rounded-lg'
+              className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
               <Link
                 href='/changelog'
@@ -75,7 +75,7 @@ export default async function Header() {
               </Link>
             </li>
             <li
-              className='transition duration-300 hover:scale-105 hover:bg-[#333333] rounded-lg'
+              className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
               <a
                 href='/cards'
@@ -96,14 +96,14 @@ export default async function Header() {
             className='hidden text-2xl md:flex items-center gap-2'
           >
             <li
-              className='transition duration-300 hover:scale-105 hover:bg-[#333333] rounded-lg'
+              className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
               <Link
                 href={process.env.SUPPORT}
                 className='flex gap-2 px-4 py-2'
               >
                 <FaDiscord
-                  size={40}
+                  size={30}
                 />
               </Link>
             </li>

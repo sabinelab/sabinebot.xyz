@@ -10,18 +10,18 @@ export default function ChangelogSkeleton() {
     <div className='px-10 pt-15 max-w-none'>
 
       <div
-        className='h-10 bg-[#2A2A2A] rounded-full w-1/4 mb-4 animate-pulse'
+        className='h-10 bg-[#2A2A2A]/30 rounded-full w-1/4 mb-4 animate-pulse'
       />
 
       <div
-        className='h-8 bg-[#2A2A2A] rounded-full w-1/2 mb-6 animate-pulse'
+        className='h-8 bg-[#2A2A2A]/30 rounded-full w-1/2 mb-6 animate-pulse'
       />
 
       <div
-        className='h-4 bg-gray-500 rounded-full w-full md:w-3/4 mb-1 animate-pulse'
+        className='h-4 bg-gray-500/30 rounded-full w-full md:w-3/4 mb-1 animate-pulse'
       />
       <div
-        className='h-4 bg-gray-500 rounded-full w-11/12 md:w-2/3 mb-10 animate-pulse'
+        className='h-4 bg-gray-500/30 rounded-full w-11/12 md:w-2/3 mb-10 animate-pulse'
       />
 
       <div className='space-y-10'>
@@ -29,7 +29,7 @@ export default function ChangelogSkeleton() {
           <div key={index}>
 
             <div
-              className={`h-6 bg-[#2A2A2A] rounded-full ${group.titleWidth} mb-3 animate-pulse`}
+              className={`h-6 bg-[#2A2A2A]/30 rounded-full ${group.titleWidth} mb-3 animate-pulse`}
             />
 
             <ul className='space-y-1 pl-4'>
@@ -38,11 +38,11 @@ export default function ChangelogSkeleton() {
                   key={i}
                   className='flex items-center space-x-2'
                 >
-                  <div className='w-1 h-1 bg-gray-600 rounded-full' />
+                  <div className='w-1 h-1 bg-gray-600/30 rounded-full' />
 
                   <div
                     className={`
-                      h-4 rounded-full bg-gray-600 animate-pulse
+                      h-4 rounded-full bg-gray-600/30 animate-pulse
                       ${i % 3 === 0 ? 'w-2/3' : i % 3 === 1 ? 'w-1/2 md:w-1/3' : 'w-3/4 md:w-2/3'}
                     `}
                   />
