@@ -5,6 +5,7 @@ import { getPlayers } from '@sabinelab/players'
 import { ArrowDown } from 'lucide-react'
 
 const players = getPlayers()
+const ts = Date.now()
 
 export default async function Home() {
   const t = await getTranslations()
@@ -156,14 +157,14 @@ export default async function Home() {
             </div>
             <div className='hidden md:flex gap-5 md:flex-1 justify-center'>
               <Image
-                src={`${process.env.CDN_URL}/cards/389.png`}
+                src={`${process.env.CDN_URL}/cards/529.png?ts=${ts}`}
                 width={300}
                 height={300}
                 alt='claim'
                 className='transition duration-300 hover:scale-105 hover:brightness-110'
               />
               <Image
-                src={`${process.env.CDN_URL}/cards/368.png`}
+                src={`${process.env.CDN_URL}/cards/509.png?ts=${ts}`}
                 width={300}
                 height={300}
                 alt='match'
