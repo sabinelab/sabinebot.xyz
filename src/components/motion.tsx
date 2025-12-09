@@ -16,7 +16,7 @@ export default function Motion(props: Props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 1 }}
-      transition={{ duration: 0.75, ease: 'easeInOut' }}
+      transition={{ duration: 0.25, ease: 'easeInOut' }}
     >
       {props.children}
     </motion.div>
