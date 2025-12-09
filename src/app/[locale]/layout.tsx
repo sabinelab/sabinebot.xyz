@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import Footer from '@/components/footer'
 import Script from 'next/script'
 import Motion from '@/components/motion'
+import NextTopLoader from 'nextjs-toploader'
 
 export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
   const { locale } = await params
@@ -59,6 +60,7 @@ export default async function RootLayout({
               crossOrigin='anonymous'
               strategy='afterInteractive'
             />
+            <NextTopLoader color='#78B14B' />
             <Motion children={children} />
           </main>
         </NextIntlClientProvider>
