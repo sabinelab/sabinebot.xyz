@@ -3,8 +3,14 @@ import ChangelogsList from './changelogs-list'
 import { Suspense } from 'react'
 import ChangelogsSkeleton from '@/app/[locale]/changelog/changelogs-skeleton'
 
-export default async function ChangelogPage() {
+type Props = {
+  params: Promise<{
+    locale: string
+  }>
+}
+export default async function ChangelogPage(props: Props) {
   const t = await getTranslations()
+  const params = await props.params
 
   return (
     <>
@@ -15,7 +21,7 @@ export default async function ChangelogPage() {
       </div>
       
       <Suspense fallback={<ChangelogsSkeleton />} >
-        <ChangelogsList />
+        <ChangelogsList locale={params.locale} />
       </Suspense>
     </>
   )

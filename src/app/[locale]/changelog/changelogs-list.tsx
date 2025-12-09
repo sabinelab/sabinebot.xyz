@@ -1,3 +1,4 @@
+import moment from 'moment'
 import Link from 'next/link'
 
 type Content = {
@@ -24,8 +25,14 @@ const getChangelogs = async() => {
     )
 }
 
-export default async function ChangelogsList() {
+type Props = {
+  locale: string
+}
+
+export default async function ChangelogsList(props: Props) {
   const changelogs = await getChangelogs()
+
+  moment.locale(props.locale)
 
   return (
     <>
@@ -36,7 +43,10 @@ export default async function ChangelogsList() {
           changelogs.map((update, i) => (
             <Link
               key={i}
-              className='bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105'
+              className='
+                bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105
+                  flex justify-between items-center
+              '
               href={`/changelog/v${update.id}`}
             >
               <h2
@@ -44,6 +54,12 @@ export default async function ChangelogsList() {
               >
                 v{update.id}
               </h2>
+
+              <span
+                className='text-gray-400'
+              >
+                {moment(update.published_at).format('LLL')}
+              </span>
             </Link>
           ))
         }
