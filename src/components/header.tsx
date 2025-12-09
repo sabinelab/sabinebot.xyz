@@ -77,7 +77,7 @@ export default async function Header() {
             <li
               className='transition duration-300 hover:scale-105 hover:bg-[#333333]/30 rounded-lg'
             >
-              <a
+              <Link
                 href='/cards'
                 className='flex items-center gap-2 px-4 py-2'
               >
@@ -85,7 +85,7 @@ export default async function Header() {
                   size={20}
                 />
                 {t('header.cards')}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
