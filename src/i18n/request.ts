@@ -1,12 +1,12 @@
 import { hasLocale } from 'next-intl'
 import { getRequestConfig } from 'next-intl/server'
 import { routing } from './routing'
-import br from '@/messages/br.json'
-import us from '@/messages/us.json'
+import br from '@/messages/pt-BR.json'
+import us from '@/messages/en-US.json'
 
 const locales = {
-  br,
-  us
+  'pt-BR': br,
+  'en-US': us
 } as const
 
 export default getRequestConfig(async({ requestLocale }) => {

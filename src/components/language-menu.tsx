@@ -45,13 +45,13 @@ export default function LanguageMenu() {
             >
               <li
                 className='flex items-center px-4 py-2 cursor-pointer gap-4 hover:bg-[#3A3A3A]/30 rounded-md'
-                onClick={() => changeLanguage('br')}
+                onClick={() => changeLanguage('pt-BR')}
               >
                 <span>Português</span>
               </li>
               <li
                 className='flex items-center px-4 py-2 cursor-pointer gap-4 hover:bg-[#3A3A3A]/30 rounded-md'
-                onClick={() => changeLanguage('us')}
+                onClick={() => changeLanguage('en-US')}
               >
                 <span>English</span>
               </li>
