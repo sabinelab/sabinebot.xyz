@@ -45,7 +45,7 @@ export default async function ChangelogsList(props: Props) {
               key={i}
               className='
                 bg-[#2A2A2A]/30 p-5 rounded-lg max-w-xs md:max-w-2xl mb-6 w-[700] transition duration-500 hover:scale-105
-                  flex justify-between items-center
+                flex justify-between items-center gap-25
               '
               href={`/changelog/v${update.id}`}
             >
@@ -56,7 +56,7 @@ export default async function ChangelogsList(props: Props) {
               </h2>
 
               <span
-                className='text-gray-400'
+                className='text-gray-400 text-sm md:text-base'
               >
                 {moment(update.published_at).format('LLL')}
               </span>
