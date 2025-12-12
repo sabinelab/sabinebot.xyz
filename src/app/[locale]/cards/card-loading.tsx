@@ -154,7 +154,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                   >
                     <span className='w-1.5 h-1.5 rounded-full bg-current' />
                     {
-                      player.purchaseable
+                      player.purchasable
                         ? t('cards.purchasable.true')
                         : t('cards.purchasable.false')
                     }
