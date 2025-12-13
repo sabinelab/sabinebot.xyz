@@ -6,7 +6,7 @@
       "name": "sabine-website",
       "dependencies": {
         "@headlessui/react": "^2.2.9",
-        "@sabinelab/players": "^1.3.2",
+        "@sabinelab/players": "^1.3.5",
         "@tailwindcss/typography": "^0.5.19",
         "lucide-react": "^0.555.0",
         "moment": "^2.30.1",
@@ -253,7 +253,7 @@
 
     "@rtsao/scc": ["@rtsao/scc@1.1.0", "", {}, "sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g=="],
 
-    "@sabinelab/players": ["@sabinelab/players@1.3.2", "https://npm.pkg.github.com/download/@sabinelab/players/1.3.2/cacdacb7c867da510f59565856f0a814afc79190", {}, "sha512-yr7gKZMcpx75+Ux1+hl6utX1z85YpSWKuChBubp1Oh9iGNWoC98rfHMUl23WWxC1OFLvCO/80qDeTi5661LbJg=="],
+    "@sabinelab/players": ["@sabinelab/players@1.3.5", "https://npm.pkg.github.com/download/@sabinelab/players/1.3.5/66076ac0448fc58bcdddd2e10e1b2518d7af869a", {}, "sha512-CrURuIlSOWwnPFkuyT4OwcVn7i2EmLVrgF2LRilKQI/xm9+7/G8prVgvq1Qa8mkH9Y9Rr0KfLe8jzX7OzBm8BQ=="],
 
     "@schummar/icu-type-parser": ["@schummar/icu-type-parser@1.21.5", "", {}, "sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw=="],
 
