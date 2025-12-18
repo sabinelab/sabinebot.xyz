@@ -8,7 +8,7 @@ type Command = {
 const getCommands = async() => {
   const res = await fetch(process.env.API_URL + '/commands', {
     headers: {
-      authorizations: process.env.AUTH
+      authorization: process.env.AUTH
     }
   })
   const commands: Command[] = await res.json()

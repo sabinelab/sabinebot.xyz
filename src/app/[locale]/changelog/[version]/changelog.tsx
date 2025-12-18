@@ -8,7 +8,11 @@ type Props = {
 }
 
 const getContent = async(props: Props) => {
-  const res = await fetch(process.env.API_URL + '/updates')
+  const res = await fetch(process.env.API_URL + '/updates', {
+    headers: {
+      authorization: process.env.AUTH
+    }
+  })
   const changelogs: Changelog[] = await res.json()
   const changelog = changelogs.find(c =>
     c.id === props.version.replace('v', '')
