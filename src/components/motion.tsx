@@ -1,7 +1,7 @@
 'use client'
 
-import { usePathname } from '@/i18n/navigation'
 import { motion } from 'motion/react'
+import { usePathname } from '@/i18n/navigation'
 
 type Props = {
   children: React.ReactNode

@@ -5,7 +5,7 @@ type Command = {
   description: string
 }
 
-const getCommands = async() => {
+const getCommands = async () => {
   const res = await fetch(process.env.API_URL + '/commands', {
     headers: {
       authorization: process.env.AUTH
@@ -17,16 +17,11 @@ const getCommands = async() => {
 }
 
 export default async function CommandsList() {
-  const [commands, t] = await Promise.all([
-    getCommands(),
-    getTranslations()
-  ])
+  const [commands, t] = await Promise.all([getCommands(), getTranslations()])
 
   return (
     <>
-      <div
-        className='grid justify-items-center pt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
-      >
+      <div className='grid justify-items-center pt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
         {commands.map((cmd, i) => (
           <div
             key={i}
@@ -36,16 +31,8 @@ export default async function CommandsList() {
             '
           >
             <div>
-              <h2
-                className='text-2xl font-extrabold'
-              >
-                /{cmd.name}
-              </h2>
-              <p
-                className='mt-2 text-lg'
-              >
-                {t(`commands.${cmd.name}.description`)}
-              </p>
+              <h2 className='text-2xl font-extrabold'>/{cmd.name}</h2>
+              <p className='mt-2 text-lg'>{t(`commands.${cmd.name}.description`)}</p>
             </div>
           </div>
         ))}

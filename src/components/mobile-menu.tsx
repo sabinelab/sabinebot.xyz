@@ -3,8 +3,8 @@
 import { Menu } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
-import MobileLanguageMenu from './mobile-language-menu'
 import { FaDiscord } from 'react-icons/fa'
+import MobileLanguageMenu from './mobile-language-menu'
 
 type Props = {
   commands: string
@@ -15,7 +15,7 @@ type Props = {
 
 export default function MobileMenu({ cards, commands, changelog, url }: Props) {
   const [isOpen, setIsOpen] = useState(false)
-  
+
   return (
     <>
       <div className='flex items-center justify-between relative'>
@@ -27,10 +27,7 @@ export default function MobileMenu({ cards, commands, changelog, url }: Props) {
           <div className='absolute top-15 right-1 bg-[#2A2A2A]/30 rounded-sm shadow-md z-50'>
             <ul className='flex flex-col gap-2 justify-center items-center p-2'>
               <li>
-                <Link
-                  href='/commands'
-                  className='inline-block py-1 px-4'
-                >
+                <Link href='/commands' className='inline-block py-1 px-4'>
                   {commands}
                 </Link>
               </li>
@@ -50,13 +47,8 @@ export default function MobileMenu({ cards, commands, changelog, url }: Props) {
                 </Link>
               </li>
               <li>
-                <Link
-                  href={url}
-                  className='inline-block py-1 px-4'
-                >
-                  <FaDiscord
-                    size={30}
-                  />
+                <Link href={url} className='inline-block py-1 px-4'>
+                  <FaDiscord size={30} />
                 </Link>
               </li>
               <li>

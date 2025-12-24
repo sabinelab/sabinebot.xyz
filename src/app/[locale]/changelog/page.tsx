@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server'
-import ChangelogsList from './changelogs-list'
 import { Suspense } from 'react'
 import ChangelogsSkeleton from '@/app/[locale]/changelog/changelogs-skeleton'
+import ChangelogsList from './changelogs-list'
 
 type Props = {
   params: Promise<{
@@ -15,12 +15,10 @@ export default async function ChangelogPage(props: Props) {
   return (
     <>
       <div>
-        <h1 className='font-bold text-4xl md:text-5xl text-center pt-15'>
-          {t('changelog.title')}
-        </h1>
+        <h1 className='font-bold text-4xl md:text-5xl text-center pt-15'>{t('changelog.title')}</h1>
       </div>
-      
-      <Suspense fallback={<ChangelogsSkeleton />} >
+
+      <Suspense fallback={<ChangelogsSkeleton />}>
         <ChangelogsList locale={params.locale} />
       </Suspense>
     </>

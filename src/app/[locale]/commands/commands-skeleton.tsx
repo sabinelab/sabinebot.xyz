@@ -1,9 +1,7 @@
 export default function CommandsSkeleton() {
   return (
     <>
-      <div
-        className='grid justify-items-center pt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
-      >
+      <div className='grid justify-items-center pt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}

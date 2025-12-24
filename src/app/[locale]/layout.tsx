@@ -1,15 +1,15 @@
 import '../globals.css'
-import Header from '@/components/header'
+import type { Metadata } from 'next'
+import { Noto_Sans } from 'next/font/google'
+import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
-import { Noto_Sans } from 'next/font/google'
-import type { Metadata } from 'next'
-import Footer from '@/components/footer'
-import Script from 'next/script'
-import Motion from '@/components/motion'
 import NextTopLoader from 'nextjs-toploader'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import Motion from '@/components/motion'
 
-export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const { locale } = await params
   const t = await getTranslations({ locale })
 
@@ -28,7 +28,7 @@ export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
 }
 
 type Props = {
-  children?: React.ReactNode,
+  children?: React.ReactNode
   params: Promise<{
     locale: string
   }>
@@ -38,10 +38,7 @@ const noto = Noto_Sans({
   subsets: ['latin']
 })
 
-export default async function RootLayout({
-  children,
-  params
-}: Props) {
+export default async function RootLayout({ children, params }: Props) {
   const messages = await getMessages()
   const { locale } = await params
 
@@ -49,10 +46,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${noto.className} min-h-screen flex flex-col background`}>
         <Header />
-        <NextIntlClientProvider
-          messages={messages}
-          locale={locale}
-        >
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <main className='grow'>
             <Script
               async

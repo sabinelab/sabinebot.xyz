@@ -3,7 +3,7 @@ import MobileMenu from './mobile-menu'
 
 export default async function MobileMenuWrapper() {
   const t = await getTranslations()
-    
+
   return (
     <>
       <MobileMenu
