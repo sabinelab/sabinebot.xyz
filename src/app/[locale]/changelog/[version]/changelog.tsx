@@ -30,7 +30,7 @@ export default async function ChangelogPage(props: Props) {
 
   return (
     <>
-      <div className='px-10 pt-15 max-w-none markdown'>
+      <div className='mx-auto px-10 pt-15 max-w-xl md:max-w-5xl markdown'>
         <Markdown>{content.text.trim()}</Markdown>
       </div>
     </>
