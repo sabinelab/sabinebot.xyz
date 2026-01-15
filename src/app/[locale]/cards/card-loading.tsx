@@ -110,11 +110,6 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
 
                   <span className='flex items-center gap-2'>
                     <span className='w-1.5 h-1.5 rounded-full bg-current' />
-                    {player.purchasable ? t('cards.purchasable.true') : t('cards.purchasable.false')}
-                  </span>
-
-                  <span className='flex items-center gap-2'>
-                    <span className='w-1.5 h-1.5 rounded-full bg-current' />
                     {t.rich('cards.price', {
                       price: player.price.toLocaleString(),
                       strong: chunks => <span className='font-bold text-gray-400'>{chunks}</span>
@@ -138,7 +133,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                     <span className='flex items-center gap-2'>
                       <span className='w-1.5 h-1.5 rounded-full bg-current' />
                       {t.rich('cards.stats.hs', {
-                        stats: player.HS,
+                        stats: player.hs,
                         strong: chunks => <span className='font-bold text-gray-400'>{chunks}</span>
                       })}
                     </span>
@@ -164,7 +159,7 @@ export default function CardLoading({ src, collection, alt, player }: Props) {
                     <span className='flex items-center gap-2'>
                       <span className='w-1.5 h-1.5 rounded-full bg-current' />
                       {t.rich('cards.stats.acs', {
-                        stats: player.ACS,
+                        stats: player.acs,
                         strong: chunks => <span className='font-bold text-gray-400'>{chunks}</span>
                       })}
                     </span>
