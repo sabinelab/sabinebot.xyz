@@ -11,7 +11,7 @@ export default async function Wiki() {
         </h1>
       </div>
       <div className='flex items-center justify-center pt-10'>
-        <div className='bg-[#2A2A2A]/30 p-5 rounded-2xl max-w-xs md:max-w-5xl text-3xl'>
+        <div className='p-5 rounded-2xl max-w-xs md:max-w-5xl text-3xl'>
           <ul className='flex flex-col gap-10'>
             <li>
               <h1 className='text-2xl font-bold text-center' id='introduction-to-simulator'>

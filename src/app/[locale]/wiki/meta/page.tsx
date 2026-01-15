@@ -1,6 +1,12 @@
 import { getTranslations } from 'next-intl/server'
 
-export const valorant_maps = [
+const valorantMaps: {
+  name: string
+  meta_agents: string[]
+  image: string
+  current_map_pool?: boolean
+  sides: ('A' | 'B' | 'C')[]
+}[] = [
   {
     name: 'Ascent',
     meta_agents: ['Jett', 'Killjoy', 'Sova', 'KAY/O', 'Omen', 'Vyse', 'Yoru', 'Waylay', 'Cypher', 'Chamber'],
@@ -18,7 +24,8 @@ export const valorant_maps = [
     name: 'Breeze',
     meta_agents: ['Viper', 'Jett', 'Cypher', 'KAY/O', 'Sova', 'Harbor'],
     image: 'https://imgur.com/p5Bxsca.png',
-    sides: ['A', 'B']
+    sides: ['A', 'B'],
+    current_map_pool: true
   },
   {
     name: 'Fracture',
@@ -77,7 +84,6 @@ export const valorant_maps = [
   {
     name: 'Sunset',
     meta_agents: ['Raze', 'Neon', 'Fade', 'Sova', 'Breach', 'Gekko', 'Viper', 'Omen', 'Cypher'],
-    current_map_pool: true,
     image: 'https://imgur.com/MuMwr1F.png',
     sides: ['A', 'B']
   },
@@ -95,7 +101,7 @@ export const valorant_maps = [
     image: 'https://imgur.com/2rmdsWE.png',
     sides: ['A', 'B']
   }
-]
+] as const
 
 export default async function MetaAgents() {
   const t = await getTranslations()
@@ -129,7 +135,7 @@ export default async function MetaAgents() {
                 })}
               </p>
             </li>
-            {valorant_maps
+            {valorantMaps
               .sort((a, b) => a.name.localeCompare(b.name))
               .map((map, i) => (
                 <li key={i}>
